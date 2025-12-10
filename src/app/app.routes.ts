@@ -29,6 +29,26 @@ export const routes: Routes = [
         path: 'home',
         loadComponent: () => import('./features/home/home')
           .then(c => c.Home)
+      },
+      {
+        path: 'orders',
+        loadComponent: () => import('./features/home/orders/orders')
+          .then(c => c.Orders)
+      },
+      {
+        path: 'customers',
+        loadComponent: () => import('./features/home/customers/customers')
+          .then(c => c.Customers)
+      },
+      {
+        path: 'frames',
+        loadComponent: () => import('./features/home/frames/frames')
+          .then(c => c.Frames)
+      },
+      {
+        path: 'lens',
+        loadComponent: () => import('./features/home/lens/lens')
+          .then(c => c.Lens)
       }
     ],
   },
