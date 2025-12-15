@@ -1,1 +1,23 @@
-<p>optics-table works!</p>
+<div class="card">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template pTemplate="caption">
+      <span class="text-xl font-bold">{{caption}}</span>
+    </ng-template>
+
+    <ng-template pTemplate="header">
+      <tr>
+        @for (col of cols; track col) {
+          <th>{{ col.header }}</th>
+        }
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        @for (col of cols; track col) {
+          <td>{{ product[col.field]}}</td>
+        }
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
