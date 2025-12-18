@@ -1,10 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {TableModule} from 'primeng/table';
 import {InputText} from 'primeng/inputtext';
 import {InputIcon} from 'primeng/inputicon';
 import {IconField} from 'primeng/iconfield';
 import {ButtonModule} from 'primeng/button';
 import {RouterLink} from '@angular/router';
+import {Tag} from 'primeng/tag';
 
 
 @Component({
@@ -16,6 +17,7 @@ import {RouterLink} from '@angular/router';
     IconField,
     ButtonModule,
     RouterLink,
+    Tag,
 
   ],
   templateUrl: './optics-table.html',
@@ -23,18 +25,30 @@ import {RouterLink} from '@angular/router';
   standalone: true,
 
 })
-export class OpticsTable implements OnInit {
+export class OpticsTable {
   @Input() products: any[] = [];
   @Input() cols: any[] = [];
   @Input() caption: string = '';
   @Input() searchFilter: boolean = false;
   @Input() buttonName: string = 'add Button';
   @Input() showButton: boolean = false;
-  @Input() buttonNavigate: string | undefined ;
+  @Input() buttonNavigate: string | undefined;
 
 
-  ngOnInit() {
-
+  getSeverity(status: string): "success" | "secondary" | "danger" | "warn" | "info" | undefined | null {
+    switch (status) {
+      case 'Shipped':
+        return 'success';
+      case 'Cancelled':
+        return 'danger';
+      case 'Processing':
+        return 'warn';
+      case 'New':
+        return 'info';
+      default:
+        return 'secondary';
+    }
   }
+
 
 }

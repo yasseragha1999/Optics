@@ -32,8 +32,16 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        loadComponent: () => import('./features/home/orders/orders')
-          .then(c => c.Orders)
+        loadComponent: () =>
+          import('./features/home/orders/orders')
+            .then(c => c.Orders),
+      },
+
+      {
+        path: 'orders/create',
+        loadComponent: () =>
+          import('./features/home/orders/order-list/order-list')
+            .then(c => c.OrderList),
       },
       {
         path: 'customers',
