@@ -1,5 +1,5 @@
 <div class="card">
-  <p-table [value]="products" [tableStyle]="{ 'min-width': '60rem' }">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '60rem'}">
 
     <ng-template pTemplate="caption">
       <div class="card flex flex-wrap justify-between items-center mb-2 ">
@@ -33,6 +33,28 @@
             <td>
               <p-tag [value]="product[col.field]" [rounded]="true" [severity]="getSeverity(product[col.field])"></p-tag>
             </td>
+          } @else if (col.field == 'action') {
+            <td>
+              <button
+                pButton
+                type="button"
+                icon="pi pi-ellipsis-v"
+                text
+                rounded
+                severity="secondary"
+                (click)="menu.toggle($event)"
+              ></button>
+
+              <p-tieredMenu
+                #menu
+                [model]="items"
+                popup="true"
+                appendTo="body">
+              </p-tieredMenu>
+
+            </td>
+
+
           } @else {
             <td>{{ product[col.field] }}</td>
           }
