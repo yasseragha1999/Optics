@@ -8,6 +8,7 @@ import {RouterLink} from '@angular/router';
 import {Tag} from 'primeng/tag';
 import {TieredMenu} from 'primeng/tieredmenu';
 import {MenuItem} from 'primeng/api';
+import {Tab, TabList, Tabs} from 'primeng/tabs';
 
 
 @Component({
@@ -21,6 +22,9 @@ import {MenuItem} from 'primeng/api';
     RouterLink,
     Tag,
     TieredMenu,
+    Tabs,
+    TabList,
+    Tab,
 
   ],
   templateUrl: './optics-table.html',
@@ -29,6 +33,7 @@ import {MenuItem} from 'primeng/api';
 
 })
 export class OpticsTable implements OnInit {
+  // Data Shared
   @Input() products: any[] = []
   @Input() cols: any[] = [];
   @Input() caption: string = '';

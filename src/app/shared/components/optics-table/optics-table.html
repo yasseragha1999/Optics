@@ -8,6 +8,17 @@
           <p-button severity="info" [routerLink]="buttonNavigate" [label]="buttonName.toUpperCase()"/>
         }
       </div>
+      <div class="flex justify-center mb-1">
+        <p-tabs value="All">
+          <p-tablist>
+            <p-tab value="All">All</p-tab>
+            <p-tab value="Shipped">Shipped</p-tab>
+            <p-tab value="Cancelled">Cancelled</p-tab>
+            <p-tab value="Processing">Processing</p-tab>
+            <p-tab value="New">New</p-tab>
+          </p-tablist>
+        </p-tabs>
+      </div>
       <div class="flex justify-end">
         @if (searchFilter) {
           <p-iconfield>
