@@ -33,7 +33,7 @@ import {Tab, TabList, Tabs} from 'primeng/tabs';
 
 })
 export class OpticsTable implements OnInit {
-  // Data Shared
+
   @Input() products: any[] = []
   @Input() cols: any[] = [];
   @Input() caption: string = '';
