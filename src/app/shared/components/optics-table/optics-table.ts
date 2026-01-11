@@ -50,14 +50,14 @@ export class OpticsTable implements OnInit {
         label: 'Edit',
         icon: 'pi pi-pencil',
         command: () => {
-          console.log('Edit');
+          this.onRowEditInit()
         }
       },
       {
         label: 'Delete',
         icon: 'pi pi-trash',
         command: () => {
-          console.log('Delete');
+
         }
       }
     ];
@@ -81,20 +81,10 @@ export class OpticsTable implements OnInit {
   }
 
 
-  onActions() {
-    document.getElementById('showActions')
+  onRowEditInit() {
+    console.log("edit")
   }
 
-  // onRowEditInit() {
-  //
-  // }
-  //
-  // onRowEditSave() {
-  //
-  // }
-  //
-  // onRowEditCancel() {
-  //
-  // }
+
 
 }
