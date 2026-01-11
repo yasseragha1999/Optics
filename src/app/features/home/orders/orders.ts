@@ -26,21 +26,24 @@ export class Orders {
       totalPrice: 1588.47,
       orderDate: new Date().toDateString(),
       action: []
-    }, {
+    },
+    {
       number: 'OR254277',
       customer: 'Prof. Domingo Shields DDS',
       status: 'Cancelled',
       totalPrice: 1588.47,
       orderDate: new Date().toDateString(),
       action: []
-    }, {
+    },
+    {
       number: 'OR254277',
       customer: 'Prof. Domingo Shields DDS',
       status: 'Processing',
       totalPrice: 1588.47,
       orderDate: new Date().toDateString(),
       action: []
-    }, {
+    },
+    {
       number: 'OR254277',
       customer: 'Prof. Domingo Shields DDS',
       status: 'New',

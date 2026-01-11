@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TableModule} from 'primeng/table';
 import {InputText} from 'primeng/inputtext';
 import {InputIcon} from 'primeng/inputicon';
@@ -6,6 +6,9 @@ import {IconField} from 'primeng/iconfield';
 import {ButtonModule} from 'primeng/button';
 import {RouterLink} from '@angular/router';
 import {Tag} from 'primeng/tag';
+import {TieredMenu} from 'primeng/tieredmenu';
+import {MenuItem} from 'primeng/api';
+import {Tab, TabList, Tabs} from 'primeng/tabs';
 
 
 @Component({
@@ -18,6 +21,10 @@ import {Tag} from 'primeng/tag';
     ButtonModule,
     RouterLink,
     Tag,
+    TieredMenu,
+    Tabs,
+    TabList,
+    Tab,
 
   ],
   templateUrl: './optics-table.html',
@@ -25,14 +32,37 @@ import {Tag} from 'primeng/tag';
   standalone: true,
 
 })
-export class OpticsTable {
-  @Input() products: any[] = [];
+export class OpticsTable implements OnInit {
+
+  @Input() products: any[] = []
   @Input() cols: any[] = [];
   @Input() caption: string = '';
   @Input() searchFilter: boolean = false;
   @Input() buttonName: string = 'add Button';
   @Input() showButton: boolean = false;
   @Input() buttonNavigate: string | undefined;
+
+  items: MenuItem[] | undefined;
+
+  ngOnInit() {
+    this.items = [
+      {
+        label: 'Edit',
+        icon: 'pi pi-pencil',
+        command: () => {
+          this.onRowEditInit()
+        }
+      },
+      {
+        label: 'Delete',
+        icon: 'pi pi-trash',
+        command: () => {
+
+        }
+      }
+    ];
+
+  }
 
 
   getSeverity(status: string): "success" | "secondary" | "danger" | "warn" | "info" | undefined | null {
@@ -49,6 +79,12 @@ export class OpticsTable {
         return 'secondary';
     }
   }
+
+
+  onRowEditInit() {
+    console.log("edit")
+  }
+
 
 
 }
